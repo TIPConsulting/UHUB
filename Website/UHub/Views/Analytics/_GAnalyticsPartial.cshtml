@@ -1,0 +1,10 @@
+﻿@{
+    var apiKey = UHub.CoreLib.Logging.Management.LoggingFactory.Singleton.Properties.GoogleAnalyticsKey;
+    var enableTelemetry = !string.IsNullOrWhiteSpace(apiKey);
+}
+
+@if (enableTelemetry)
+{
+    <script async src="https://www.googletagmanager.com/gtag/js?id=@apiKey"></script>
+    @Scripts.Render("~/DynamicScripts/GAnalytics.js")
+}

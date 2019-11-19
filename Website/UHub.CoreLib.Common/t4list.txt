@@ -1,0 +1,2 @@
+C:\NTFS\SSD_Account_1\Users\aalbert\Workspaces\SchoolRepo\3308_GroupProj\Website\UHub.CoreLib.Common\DataConverters\DataConverterGenerator.tt
+C:\NTFS\SSD_Account_1\Users\aalbert\Workspaces\SchoolRepo\3308_GroupProj\Website\UHub.CoreLib.Common\DataConverters\DtoConverterGenerator.tt

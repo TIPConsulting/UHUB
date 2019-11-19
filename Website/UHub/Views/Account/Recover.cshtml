@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Forgot Password";
+    Layout = "~/Views/Shared/_LayoutNoAuth.cshtml";
+}
+
+<div id="body-Content" class="container w-70">
+
+
+    <h2>Account Recovery</h2>
+
+
+    <div class="center_LR" style="display:inline-block; width:100%;max-width:500px">
+        @using (Html.BeginForm())
+        {
+
+
+            <label for="txt_RecoveryKey">Please enter your recovery key from the email</label>
+            <br />
+            <input type="password" name="txt_RecoveryKey" placeholder="Recovery Key:" class="form-control">
+
+            <br />
+            <br />
+
+            <label for="txt_RecoveryKey">Please enter your new password</label>
+            <br />
+            <input type="password" name="txt_NewPswd" placeholder="New Password:" class="form-control">
+            <br />
+            <input type="password" name="txt_ConfirmPswd" placeholder="Confirm Password:" class="form-control">
+            <p></p>
+
+            Html.RenderPartial(
+                "~/Views/Security/_RecaptchaPartial.cshtml",
+                new UHub.Models.Security.RecaptchaLoginViewModel
+                {
+                    SubmitText = "Update Password",
+                    SubmitClass = "btn-outline-dark",
+                    RenderScripts = false
+                });
+
+            <p>@ViewBag.Message</p>
+
+        }
+
+
+    </div>
+
+</div>
+
+
+
+
+@section scripts
+{
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @Scripts.Render("~/ClientResources/Security/Scripts/RecaptchaPartial.js")
+    @if (ViewBag.CanForward == true)
+    {
+        @Scripts.Render("~/ClientResources/Account/Scripts/Recover.js")
+    }
+}

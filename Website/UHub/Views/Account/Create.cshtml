@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Create Account";
+    ViewBag.SkipMasterStyleLoading = true;
+    ViewBag.SkipMasterScriptLoading = true;
+    Layout = "~/Views/Shared/_LayoutNoAuth.cshtml";
+    var hasRecaptcha = CoreFactory.Singleton.Properties.EnableRecaptcha;
+    var publicKey = CoreFactory.Singleton.Properties.RecaptchaPublicKey;
+
+}
+
+
+@section head
+{
+    @Styles.Render("~/resources/account/createStyle")
+}
+
+
+<div id="body-Content" class="container w-70">
+    <div class="px-5 mt-3 bg-white">
+        <div class="py-3">
+            <h4 class="ml-4">Create an account</h4>
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "userForm" }))
+            {
+
+
+                <div class="row form-group">
+                    <div class="col-lg">
+                        <label class="required" for="email">Email *</label>
+                        <input id="email" type="email" class="form-control" ref="inputEmail" placeholder="Email:">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label class="required" for="usr">Username *</label>
+                        <input type="text" class="form-control " id="usr" ref="inputUSR" placeholder="Username:">
+                    </div>
+                    <div class="col-md">
+                        <label class="required" for="pwd">Password *</label>
+                        <input type="password" class="form-control " id="pwd" ref="inputPWD" placeholder="Password:">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label class="required" for="firstname">First Name *</label>
+                        <input type="text" autocomplete="given-name" class="form-control " id="firstname" ref="inputFirst" placeholder="First Name:">
+                    </div>
+                    <div class="col-md">
+                        <label class="required" for="lastname">Last Name *</label>
+                        <input type="text" autocomplete="family-name" class="form-control " id="lastname" ref="inputLast" placeholder="Last Name:">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label class="required" for="autocomplete">Major *</label>
+                        <input class="form-control" id="autocomplete" ref="inputMajor" placeholder="Major:">
+                    </div>
+                    <div class="col-md">
+                        <label class="" for="phone">Phone Number</label>
+                        <input type="text" class="form-control " id="phone" ref="inputPhone" placeholder="Phone Number:">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label class="" for="grad-date">Grad Date</label>
+                        <input type="text" class="form-control " id="grad-date" ref="inputGrad" placeholder="Grad Date:">
+                    </div>
+                    <div class="col-md">
+                        <label class="" for="year">Year</label>
+                        <select class="form-control " id="year" ref="inputYear">
+                            <option value="">Select</option>
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Senior+">Senior+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md">
+                        <label class="" for="company">Company</label>
+                        <input type="text" class="form-control " id="company" ref="inputCompany" placeholder="Company:">
+                    </div>
+                    <div class="col-md">
+                        <label class="" for="job-title">Job Title</label>
+                        <input type="text" class="form-control " id="job-title" ref="inputJob" placeholder="Job Title:">
+                    </div>
+                </div>
+                <p></p>
+
+
+                if (hasRecaptcha)
+                {
+                    <div class="g-recaptcha" data-sitekey="@publicKey"></div>
+                    <p></p>
+                }
+
+                <button type="button" class="btn-outline-dark" id="btn_CreateUser" v-on:click="readRefs(); sendData();">Submit</button>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+{
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @Scripts.Render("~/resources/account/createScript")
+}

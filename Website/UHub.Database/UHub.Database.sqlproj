@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>UHub.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8964376f-79aa-4d3d-a786-ba2a476e1e81}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>UHub.Database</RootNamespace>
+    <AssemblyName>UHub.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\EntPropertyXRef.sql" />
+    <Build Include="dbo\Tables\EntityTypes.sql" />
+    <Build Include="dbo\Tables\DataTypes.sql" />
+    <Build Include="dbo\Tables\EntPropertyMap.sql" />
+    <Build Include="dbo\Tables\EntPropertyRevisionXRef.sql" />
+    <Build Include="dbo\Tables\EntPropertyRevisionMap.sql" />
+    <Build Include="dbo\Tables\EntChildXRef.sql" />
+    <Build Include="dbo\Tables\UserClassXRef.sql" />
+    <Build Include="dbo\Tables\EntChildMap.sql" />
+    <Build Include="dbo\Tables\UserRecovery.sql" />
+    <Build Include="dbo\Tables\EntTagMap.sql" />
+    <Build Include="dbo\Tables\UserClasses.sql" />
+    <Build Include="dbo\Tables\EntFollowXRef.sql" />
+    <Build Include="dbo\Tables\EntFollowMap.sql" />
+    <Build Include="dbo\Tables\EntTagXRef.sql" />
+    <Build Include="dbo\Tables\EntLikeXRef.sql" />
+    <Build Include="dbo\Tables\EntLikeMap.sql" />
+    <Build Include="dbo\Tables\TokenValidators.sql" />
+    <Build Include="dbo\Tables\EntMemberXRef.sql" />
+    <Build Include="dbo\Tables\EntMemberMap.sql" />
+    <Build Include="dbo\Tables\SessionLog.sql" />
+    <Build Include="dbo\Tables\ActivityTargetTypes.sql" />
+    <Build Include="dbo\Tables\ActivityLogTypes.sql" />
+    <Build Include="dbo\Tables\LocationLogTypes.sql" />
+    <Build Include="dbo\Tables\ActivityLogXRef.sql" />
+    <Build Include="dbo\Tables\LocationLogXRef.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\SchemaVersioning.sql" />
+    <Build Include="dbo\Tables\Entities.sql" />
+    <Build Include="dbo\Tables\UserAuthentication.sql" />
+    <Build Include="dbo\Tables\EntProperties.sql" />
+    <Build Include="dbo\Views\vUsers.sql" />
+    <Build Include="dbo\Views\vPosts.sql" />
+    <Build Include="dbo\Views\vSchools.sql" />
+    <Build Include="dbo\Views\vSchoolMajors.sql" />
+    <Build Include="dbo\Views\vSchoolClubs.sql" />
+    <Build Include="dbo\Views\vSchoolClubModerators.sql" />
+    <Build Include="dbo\Views\vComments.sql" />
+    <Build Include="dbo\Views\vFiles.sql" />
+    <Build Include="dbo\Views\vImages.sql" />
+    <Build Include="dbo\Views\vEntPropertyMap.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetBySchool.sql" />
+    <Build Include="dbo\Stored Procedures\Post_GetByID.sql" />
+    <Build Include="dbo\Stored Procedures\Comments_GetByPost.sql" />
+    <Build Include="dbo\Stored Procedures\Comments_GetByParent.sql" />
+    <Build Include="dbo\Stored Procedures\_vEnts_Helper.sql" />
+    <Build Include="dbo\Stored Procedures\User_DeleteUserRecoveryContextByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_DeleteUserRecoveryContextByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_DeleteUserRecoveryContextByUserID.sql" />
+    <Build Include="dbo\Stored Procedures\User_DeleteUserRecoveryContextByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_PurgeByID.sql" />
+    <Build Include="dbo\Stored Procedures\Users_PurgeUnconfirmed.sql" />
+    <Build Include="dbo\Stored Procedures\Users_PurgeExpiredTokenValidators.sql" />
+    <Build Include="dbo\Stored Procedures\User_RevokeTokenValidator.sql" />
+    <Build Include="dbo\Stored Procedures\User_DoesExistByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_DoesExistByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_DoesExistByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetSaltByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetSaltByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetSaltByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdateConfirmFlag.sql" />
+    <Build Include="dbo\Stored Procedures\User_LogFailedPswdAttemptByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_LogFailedPswdAttemptByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_LogFailedPswdAttemptByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_ResetFailedPswdAttemptsByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_ResetFailedPswdAttemptsByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_ResetFailedPswdAttemptsByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_SetLastLockoutDateByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_SetLastLockoutDateByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_SetLastLockoutDateByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdateVersionByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdateVersionByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdateVersionByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_LogFailedRecoveryContextAttempt.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdatePasswordByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdatePasswordByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdatePasswordByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_CreateTokenValidator.sql" />
+    <Build Include="dbo\Stored Procedures\User_CreateRecoveryContext.sql" />
+    <Build Include="dbo\Stored Procedures\User_Create.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdateApprovalFlag.sql" />
+    <Build Include="dbo\Stored Procedures\User_DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_UpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetIDByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetIDByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetRecoveryContextByUserID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetRecoveryContextByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetTokenValidator.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetAuthInfoByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetAuthInfoByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetAuthInfoByUsername.sql" />
+    <Build Include="dbo\Stored Procedures\_SHOW_PARTITIONS.sql" />
+    <Build Include="dbo\Stored Procedures\School_GetByName.sql" />
+    <Build Include="dbo\Stored Procedures\School_GetByID.sql" />
+    <Build Include="dbo\Stored Procedures\Schools_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajors_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajor_GetByID.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajors_GetBySchool.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClubs_GetBySchool.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClubs_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_GetByID.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Post_Create.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajor_Create.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClubModerator_Create.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_Create.sql" />
+    <Build Include="dbo\Stored Procedures\School_Create.sql" />
+    <Build Include="dbo\Stored Procedures\Image_Create.sql" />
+    <Build Include="dbo\Stored Procedures\File_Create.sql" />
+    <Build Include="dbo\Stored Procedures\Comment_Create.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_Create.sql" />
+    <Build Include="dbo\Stored Procedures\_IsCastValid.sql" />
+    <Build Include="dbo\Stored Procedures\School_GetByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetBySchoolPage.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetByClubPage.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajors_GetByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClubs_GetByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\User_ValidatePostParent.sql" />
+    <Build Include="dbo\Stored Procedures\User_ValidateCommentParent.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajors_GetByDomain.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClubs_GetByDomain.sql" />
+    <Build Include="dbo\Stored Procedures\User_PurgeByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\School_IsEmailValid.sql" />
+    <Build Include="dbo\Stored Procedures\School_IsDomainValid.sql" />
+    <Build Include="dbo\Stored Procedures\School_GetByDomain.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_ValidateMembership.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_IsUserBanned.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetCountBySchool.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetCountByClub.sql" />
+    <Build Include="dbo\Stored Procedures\User_ValidateClubModerator.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetCountByParent.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetByParentPage.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetByParent.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetByClub.sql" />
+    <Build Include="dbo\Views\vPosts_ClusteredCounts.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetValidClubMemberships_Light.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetClusteredCountsBySchool.sql" />
+    <Build Include="dbo\Stored Procedures\Posts_GetClusteredCounts.sql" />
+    <Build Include="dbo\Tables\Users_1.sql" />
+    <Build Include="dbo\Tables\Entities_1.sql" />
+    <Build Include="dbo\Tables\UserConfirmation.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetConfirmTokenByUserID.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetConfirmTokenByID.sql" />
+    <Build Include="dbo\Stored Procedures\User_CreateConfirmToken.sql" />
+    <Build Include="dbo\Stored Procedures\Post_IncrementViewCount.sql" />
+    <Build Include="dbo\Stored Procedures\User_Update.sql" />
+    <Build Include="dbo\Stored Procedures\User_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\Post_UpdateProp.sql" />
+    <Build Include="dbo\Stored Procedures\Post_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Post_GetRevisions.sql" />
+    <Build Include="dbo\Tables\EntViewXRef.sql" />
+    <Build Include="dbo\Tables\EntViewMap.sql" />
+    <Build Include="dbo\Tables\EntViewDateXRef.sql" />
+    <Build Include="dbo\Tables\EventLogTypes.sql" />
+    <Build Include="dbo\Tables\EventLog.sql" />
+    <Build Include="dbo\Stored Procedures\Logging_CreateEventLog.sql" />
+    <Build Include="dbo\Stored Procedures\Users_GetBySchoolID.sql" />
+    <Build Include="dbo\Stored Procedures\Users_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\Users_GetPostCommenters.sql" />
+    <Build Include="dbo\Stored Procedures\Post_GetUserLikeCount.sql" />
+    <Build Include="dbo\Stored Procedures\Post_CreateUserLike.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Post_Delete.sql" />
+    <Build Include="dbo\Tables\EntityTypeBreakoutXRef.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntTypes.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntTypeByID.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntTypeBreakoutsByEntType.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntTypeBreakouts.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntPropertyRevisionMapsByEntType.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntPropertyRevisionMaps.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntPropertyMapsByEntType.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntPropertyMaps.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntPropertyByID.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntPropertiesByEntType.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntProperties.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetEntChildMaps.sql" />
+    <Build Include="dbo\Stored Procedures\_Ent_GetDataTypes.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolMajor_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClubModerator_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\SchoolClub_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\School_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\Image_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\File_GetRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\Comment_GetRevisions.sql" />
+  </ItemGroup>
+</Project>

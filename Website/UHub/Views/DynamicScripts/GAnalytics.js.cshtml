@@ -1,0 +1,28 @@
+﻿@{
+    var apiKey = UHub.CoreLib.Logging.Management.LoggingFactory.Singleton.Properties.GoogleAnalyticsKey;
+
+
+    var userResult = UHub.CoreLib.Management.CoreFactory.Singleton.Auth.GetCurrentUser();
+    var userStat = userResult.TokenStatus;
+    var currentUser = userResult.CmsUser;
+    var userID = currentUser.ID;
+
+    var userIdInclude = "";
+    if (userStat == 0 && currentUser != null && userID != null)
+    {
+        userIdInclude = $"gtag('set',{{'user_id':'{userID}'}});";
+    }
+
+    var jsBuilder = new System.Text.StringBuilder();
+    jsBuilder.Append("window.dataLayer=window.dataLayer||[];");
+    jsBuilder.Append("function gtag(){dataLayer.push(arguments);}");
+    jsBuilder.Append("gtag('js', new Date());");
+    jsBuilder.Append(userIdInclude);
+    jsBuilder.Append($"gtag('config', '{apiKey}');");
+
+}
+
+
+<script>
+    (function () {@{WriteLiteral(jsBuilder.ToString());}})();
+</script>

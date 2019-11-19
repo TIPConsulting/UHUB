@@ -1,0 +1,189 @@
+﻿body {
+    background-color: #dae0e6;
+}
+
+input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+
+
+.w-70 {
+    width: 70%;
+}
+
+.center_LR {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+main {
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+#post-list {
+
+    > li {
+        max-height: 500px;
+        overflow: hidden;
+
+        a [href^="/post/" i] {
+            word-break: break-word;
+        }
+
+        > .shadowBox {
+            z-index: 1000;
+            pointer-events: none;
+            height: 500px;
+            width: 100%;
+            max-width: 100%;
+            position: absolute;
+            background: transparent;
+            display: block;
+            margin: -12px 0 0 -20px;
+            box-shadow: 0px -70px 60px 0 white inset;
+
+            &:after {
+                pointer-events: none;
+                content: "Open for More";
+                position: absolute;
+                top: 480px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+.uhub-login-label {
+    /*color: white;*/
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+.uhub-login-recaptchaWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+    > p {
+        width: 100%;
+    }
+}
+
+.uhub-login-submitBtn {
+    padding-left: 40px;
+    padding-right: 40px;
+    opacity: 1 !important;
+    font-size: large;
+    border: 2px solid black;
+}
+
+.uhub-login-img-wrapper {
+    height: 525px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: -1;
+    margin-top: 55px;
+    width: 100%;
+
+
+    > img {
+        min-width: 100% !important;
+        max-width: initial !important;
+        max-height: 140%;
+        bottom: 0;
+        min-height: 100%;
+        transform: translate(-50%, -5%);
+        position: relative;
+        left: 50%;
+        filter: brightness(30%);
+    }
+}
+
+
+
+/*JQ UI AutoComplete Fix*/
+.ui-autocomplete {
+    .ui-menu-item-wrapper {
+        margin: 0 !important;
+        outline: 0 !important;
+        border: 0 !important;
+
+        &:hover {
+            box-shadow: inset 0px 0px 0px 1px rgba(150, 150, 150, 1);
+        }
+    }
+}
+
+/*Media queries to for post pages*/
+@media only screen and (max-width: 767px) {
+    #body-content {
+        position: absolute;
+        float: none;
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+
+    .list-group {
+        width: auto;
+    }
+
+    #community-block {
+        margin: auto;
+        margin-bottom: 10px;
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #body-content {
+        position: absolute;
+        float: none;
+        left: 10px;
+        right: 10px;
+    }
+
+    #community-block {
+        width: 25%;
+    }
+}
+

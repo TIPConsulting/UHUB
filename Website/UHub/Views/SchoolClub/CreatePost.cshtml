@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "CreatePost";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+}
+
+@section header
+{
+    <div id="auxNav" class="container-fullwidth">
+        <ul class="nav navbar-expand-md bg-light">
+            <li class="w-uhub-offset">
+            <li>
+            <li class="nav-item">
+                <div class="text-center">
+                    <a class="btn btn-secondary acctLnk" style="padding:3px;margin:5px 0 10px 0">Back to Club</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+}
+
+
+<div class="container w-70">
+
+
+
+    <h2>Create Post</h2>
+
+
+    <label for="inputTitle">Title:</label>
+    <input type="text" id="inputTitle" class="form-control" placeholder="Title (max 100 chars)" />
+
+
+    <p></p>
+    <label for="inputContent">Content:</label><br />
+    <p>
+        This textbox supports <a href="https://simplemde.com/markdown-guide">MarkDown formatting</a>
+    </p>
+    <textarea id="inputContent" placeholder="Content (10-10k chars)"></textarea>
+
+
+    @*<p></p>
+        <label for="inputMakePrivate">Make This Post Private</label>*@
+    <input type="checkbox" id="inputMakePrivate" style="display:none" />
+
+    <p></p>
+    <label for="inputCanComment">Enable Comments</label>
+    <input type="checkbox" id="inputCanComment" checked />
+
+
+    <p></p>
+    <input type="button" id="btn_CreatePost" value="Submit" class="btn-outline-dark center_LR" />
+</div>
+
+
+@section scripts
+{
+    <script src="https://cdn.jsdelivr.net/simplemde/1.11.2/simplemde.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    @Scripts.Render("~/resources/schoolClub/createPostScript")
+}

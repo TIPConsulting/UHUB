@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+<div id="body-content" class="container mt-4">
+    <div>
+        <ul id="post-versions" class="list-group list-group-flush w-100 float-md-left" style="display:none !important">
+            <li class="list-group-item mb-3" v-for="postVersion in postVersions">
+                <template v-if="postVersion.ModifiedDate != null">
+                    <h4> {{ postVersion.ModifiedDate.substring(0,10) }} </h4>
+                </template>
+                <h4 v-else>{{ postVersion.Name }}</h4>
+                <div v-html="postVersion.Content"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script src="~/ClientResources/Post/Scripts/History.js"></script>
+}

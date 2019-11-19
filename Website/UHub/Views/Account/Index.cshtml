@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "My Account";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+
+<div id="body-Content" class="container w-70">
+
+    <h2>My Account</h2>
+    <div class="container mt-4" style="background-color: white">
+
+        <div class="container section" style="padding: 15px 0px">
+            <div style="display:inline-block; vertical-align: top; padding-right: 10px">
+                <svg class="feather feather-user sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div style="display: inline-block;">
+                <div id="user-info">
+                    <ul style="width: 100%; padding: 0;">
+                        <li style="list-style: none">
+                            <h3>{{user.Name}}</h3>
+                            <h4>[{{user.Username}}]</h4>
+                            <h5><strong>Email: </strong>{{user.Email}}</h5>
+                            <h5><strong>Phone Number: </strong>{{user.PhoneNumber}}</h5>
+                            <h5><strong>Major: </strong>{{user.Major}}</h5>
+                            <h5><strong>Year: </strong>{{user.Year}}</h5>
+                            <h5><strong>Graduation Date: </strong>{{user.GradDate}}</h5>
+                            <h5 id="toggle_hide"><strong>Job Title: </strong>{{user.JobTitle}}</h5>
+                            <h5 id="toggle_hide"><strong>Company: </strong>{{user.Company}}</h5>
+                            <h5>
+                                <strong>School: </strong>{{user.SchoolID}}
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h4>@Html.ActionLink("Update Password", "UpdatePassword", "Account")</h4>
+</div>
+
+@section scripts{
+
+    <script src="~/ClientResources/Account/Scripts/MyAccount.js"></script>
+
+}

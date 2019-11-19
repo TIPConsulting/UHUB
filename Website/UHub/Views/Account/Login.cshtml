@@ -1,0 +1,80 @@
+﻿@model UHub.CoreLib.Entities.Users.DTOs.User_CredentialDTO
+
+@{
+    ViewBag.Title = "Login";
+    ViewBag.SkipMasterScriptLoading = true;
+    Layout = "~/Views/Shared/_LayoutNoAuth.cshtml";
+}
+
+
+
+<div id="body-Content" class="container w-70">
+
+    <h2>Login</h2>
+
+
+    <div class="center_LR" style="display:inline-block; width:100%;max-width:500px">
+
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(x => x.Email, new { @class = "uhub-login-label" })
+            @Html.TextBoxFor(x => x.Email, new { type = "email", placeholder = "Email:", @class = "form-control", style = "border:2px solid black !important;" })
+
+
+            <p></p>
+            @Html.LabelFor(x => x.Password, new { @class = "uhub-login-label" })
+            @Html.PasswordFor(x => x.Password, new { placeholder = "Password:", @class = "form-control", style = "border:2px solid black !important;" })
+
+
+            <div class="uhub-login-recaptchaWrapper">
+                @ViewBag.ErrorMsg
+                <p></p>
+                @{Html.RenderPartial("~/Views/Security/_RecaptchaPartial.cshtml", new UHub.Models.Security.RecaptchaLoginViewModel
+                    {
+                        SubmitText = "Login",
+                        SubmitClass = "btn btn-secondary uhub-login-submitBtn",
+                        RenderScripts = false
+                    });
+                }
+            </div>
+
+        }
+    </div>
+
+</div>
+@*<div class="uhub-login-img-wrapper">
+        <img class="center_LR" src="https://upload.wikimedia.org/wikipedia/commons/8/80/Flatirons_Winter_Sunrise_edit_2.jpg" />
+    </div>*@
+<p></p>
+
+<div class="container w-70" style="margin-top:150px">
+    <h2>
+        About
+    </h2>
+    UHUB is a social media site with students in mind.  We help you stay in touch with class mates quickly and easily to discuss school events or club meetings.
+
+    <p></p>
+    Current List of supported campuses:
+    <ul>
+        <li>CU Boulder</li>
+    </ul>
+
+    <p></p>
+    <div style="margin-top:30px; display:inline-block">
+        <a href="/Account/Create">Sign up today</a> to start enjoying the benefits!
+        <p></p>
+        <text>Trouble Logging in to an existing account?</text><br />
+        @Html.RouteLink("Reset your password here", new RouteValueDictionary
+           {
+               ["controller"] = "Account",
+               ["action"] = "ForgotPassword"
+           })
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @Scripts.Render("~/resources/account/loginScript")
+}

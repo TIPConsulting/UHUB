@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=.001)">
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=.001)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" async>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.min.css" async>
+    @if (ViewBag.SkipMasterStyleLoading != true)
+    {
+        @Styles.Render("~/resources/css/master")
+    }
+    @RenderSection("head", true)
+
+
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+
+    <header>
+        @RenderSection("header", true)
+    </header>
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <footer>
+        @{Html.RenderPartial("_Footer");}
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    @if (true || ViewBag.SkipMasterScriptLoading != true)
+    {
+        @Scripts.Render("~/resources/scripts/master")
+    }
+    
+    @RenderSection("scripts", true)
+    @{Html.RenderPartial("~/Views/Analytics/_GAnalyticsPartial.cshtml");}
+</body>
+
+</html>

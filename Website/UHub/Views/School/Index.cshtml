@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+@section head
+{
+    @Styles.Render("~/resources/css/school")
+}
+
+
+<div id="body-content" class="container mt-4">
+    <h2 id="school-name"></h2>
+    <p></p>
+
+    <div>
+        <ul id="post-list" class="list-group list-group-flush w-70 float-md-left" style="display:none !important">
+            <li class="list-group-item mb-3" v-for="post in posts" :key="post.ID">
+                <div class="shadowBox"></div>
+                <template v-if="post.ID != undefined">
+                    <span><a v-bind:href="'/SchoolClub/' + post.ParentID">{{post.ClubName}}</a></span>
+                    • Posted by
+                    <span>[<a v-bind:href="'/Account/find/' + post.CreatedBy">{{post.Username}}</a>]</span>
+
+                    <template v-if="post.dateCreatedFromNow != null">
+                        <span>{{post.dateCreatedFromNow}}</span>
+                    </template>
+                    <span v-else>{{post.postTime}}</span>
+
+                    <p></p>
+                    <a v-bind:href="'/Post/' + post.ID">
+                        <h3>{{ post.Name }}</h3>
+                    </a>
+                </template>
+                <h3 v-else> {{ post.Name }} </h3>
+
+                <div v-html="post.Content"></div>
+            </li>
+        </ul>
+    </div>
+    <div id="community-block" class="border bg-white p-3 float-md-right">
+        <h5 class="mx-auto d-flex justify-content-center p-2">Home</h5>
+        <div class="container">
+            <span>You can find the most recent posts here.</span>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    @Scripts.Render("~/resources/school/indexScript")
+}

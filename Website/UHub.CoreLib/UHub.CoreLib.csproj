@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0053819E-4BA2-4C94-A7BB-2B469D17980E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UHub.CoreLib</RootNamespace>
+    <AssemblyName>UHub.CoreLib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\UHub.CoreLib.xml</DocumentationFile>
+    <WarningsAsErrors>612,618</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>612,618</WarningsAsErrors>
+    <DocumentationFile>bin\Release\UHub.CoreLib.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.10\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net-Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Core.1.5.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalyticsTracker.Core, Version=4.6.7.0, Culture=neutral, PublicKeyToken=04ab204e84b117c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleAnalyticsTracker.Core.4.6.7\lib\portable45-net45+win8+wpa81\GoogleAnalyticsTracker.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalyticsTracker.WebAPI2, Version=4.6.7.0, Culture=neutral, PublicKeyToken=04ab204e84b117c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleAnalyticsTracker.WebAPI2.4.6.7\lib\net45\GoogleAnalyticsTracker.WebAPI2.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlSanitizer.4.0.187\lib\net45\HtmlSanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Konscious.Security.Cryptography.Argon2.StrongNamed, Version=1.1.1.0, Culture=neutral, PublicKeyToken=d06af81c92c3cea1, processorArchitecture=MSIL">
+      <HintPath>..\packages\Konscious.Security.Cryptography.Argon2.StrongNamed.1.0.4\lib\net40\Konscious.Security.Cryptography.Argon2.StrongNamed.dll</HintPath>
+    </Reference>
+    <Reference Include="Mailjet.Client, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mailjet.Api.1.0.1\lib\net45\Mailjet.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.DynamicData.Design" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Entity.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UHub.CoreLib.RegExp.Compiler.Output, Version=1.0.0.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_ExternalDLLs\UHub.CoreLib.RegExp.Compiler.Output.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIControllers\APIController.cs" />
+    <Compile Include="APIControllers\HttpActionResult.cs" />
+    <Compile Include="Attributes\ApiAuthControlAttribute.cs" />
+    <Compile Include="Attributes\ApiCacheControlAttribute.cs" />
+    <Compile Include="Attributes\MvcAuthControlAttribute.cs" />
+    <Compile Include="Attributes\ApiValidateRecaptchaAttribute.cs" />
+    <Compile Include="Attributes\MvcValidateRecaptchaAttribute.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entities\ClubModerators\DataInterop\ClubModeratorReader_AuthZ.cs">
+      <DependentUpon>ClubModeratorReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ClubModerators\DataInterop\ClubModeratorReader_AuthZAsync.cs">
+      <DependentUpon>ClubModeratorReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ClubModerators\DataInterop\ClubModeratorWriterAsync.cs">
+      <DependentUpon>ClubModeratorWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ClubModerators\DataInterop\ClubModeratorWriter.cs" />
+    <Compile Include="Entities\ClubModerators\DataInterop\ClubModeratorWriterSync.cs">
+      <DependentUpon>ClubModeratorWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ClubModerators\Management\ClubModeratorManagerAsync.cs">
+      <DependentUpon>ClubModeratorManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ClubModerators\Management\ClubModeratorManagerSync.cs">
+      <DependentUpon>ClubModeratorManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\DataInterop\CommentReaderAsync.cs">
+      <DependentUpon>CommentReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\DataInterop\CommentReaderSync.cs">
+      <DependentUpon>CommentReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\DataInterop\CommentReader_AuthZ.cs">
+      <DependentUpon>CommentReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\DataInterop\CommentReader_AuthZAsync.cs">
+      <DependentUpon>CommentReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\DataInterop\CommentWriterAsync.cs">
+      <DependentUpon>CommentWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\DataInterop\CommentWriterSync.cs">
+      <DependentUpon>CommentWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\Management\CommentManagerAsync.cs">
+      <DependentUpon>CommentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comments\Management\CommentManagerSync.cs">
+      <DependentUpon>CommentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostCreator.cs">
+      <DependentUpon>PostWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostCreatorAsync.cs">
+      <DependentUpon>PostWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReaderAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReaderSync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_AuthZ.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_AuthZAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_ByClub.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_ByClubAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_ByParent.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_ByParentAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_BySchool.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_BySchoolAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_Likes.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_LikesAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_Revisions.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostReader_RevisionsAsync.cs">
+      <DependentUpon>PostReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostUpdater.cs">
+      <DependentUpon>PostWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Posts\DataInterop\PostUpdaterAsync.cs">
+      <DependentUpon>PostWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReaderAsync.cs">
+      <DependentUpon>SchoolClubReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReaderSync.cs">
+      <DependentUpon>SchoolClubReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReader_AuthZ.cs">
+      <DependentUpon>SchoolClubReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReader_AuthZAsync.cs">
+      <DependentUpon>SchoolClubReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReader_Membership.cs">
+      <DependentUpon>SchoolClubReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReader_MembershipAsync.cs">
+      <DependentUpon>SchoolClubReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubWriterAsync.cs">
+      <DependentUpon>SchoolClubWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubWriterSync.cs">
+      <DependentUpon>SchoolClubWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\Management\SchoolClubManagerAsync.cs">
+      <DependentUpon>SchoolClubManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolClubs\Management\SchoolClubManagerSync.cs">
+      <DependentUpon>SchoolClubManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolMajors\DataInterop\SchoolMajorReaderAsync.cs">
+      <DependentUpon>SchoolMajorReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolMajors\DataInterop\SchoolMajorReaderSync.cs">
+      <DependentUpon>SchoolMajorReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolMajors\DataInterop\SchoolMajorWriterAsync.cs">
+      <DependentUpon>SchoolMajorWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolMajors\DataInterop\SchoolMajorWriterSync.cs">
+      <DependentUpon>SchoolMajorWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolMajors\Management\SchoolMajorManagerAsync.cs">
+      <DependentUpon>SchoolMajorManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SchoolMajors\Management\SchoolMajorManagerSync.cs">
+      <DependentUpon>SchoolMajorManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Schools\DataInterop\SchoolReaderAsync.cs">
+      <DependentUpon>SchoolReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Schools\DataInterop\SchoolReaderSync.cs">
+      <DependentUpon>SchoolReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserReaderAsync.cs">
+      <DependentUpon>UserReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserReaderSync.cs">
+      <DependentUpon>UserReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserReader_Anon.cs">
+      <DependentUpon>UserReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserReader_ConfirmToken.cs">
+      <DependentUpon>UserReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserReader_RecoveryContext.cs">
+      <DependentUpon>UserReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserReader_RecoveryContextAsync.cs">
+      <DependentUpon>UserReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserWriterAsync.cs">
+      <DependentUpon>UserWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserWriterSync.cs">
+      <DependentUpon>UserWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserWriter_RecoveryContext.cs">
+      <DependentUpon>UserWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users\DataInterop\UserWriter_RecoveryContextAsync.cs">
+      <DependentUpon>UserWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Config\CmsConfiguration_Grouped.cs" />
+    <Compile Include="Management\Config\CmsConfig_API.cs" />
+    <Compile Include="Management\Config\CmsConfig_Caching.cs" />
+    <Compile Include="Management\Config\CmsConfig_DB.cs" />
+    <Compile Include="Management\Config\CmsConfig_Errors.cs" />
+    <Compile Include="Management\Config\CmsConfig_Instance.cs" />
+    <Compile Include="Management\Config\CmsConfig_Logging.cs" />
+    <Compile Include="Management\Config\CmsConfig_Mail.cs" />
+    <Compile Include="Management\Config\CmsConfig_Security.cs" />
+    <Compile Include="Management\Config\CmsConfig_Storage.cs" />
+    <Compile Include="Management\Config\SchemaVersion.cs" />
+    <Compile Include="Management\CoreFactory.cs" />
+    <Compile Include="Management\CoreManager.cs" />
+    <Compile Include="Management\CoreProperties.cs" />
+    <Compile Include="Security\Accounts\DataInterop\UserAccountReader.cs" />
+    <Compile Include="Security\Accounts\DataInterop\UserAccountReaderAsync.cs" />
+    <Compile Include="Security\Accounts\Management\AccountManager.cs" />
+    <Compile Include="Security\Accounts\Management\AccountManagerAsync.cs" />
+    <Compile Include="Security\Accounts\Management\AccountManagerCore.cs" />
+    <Compile Include="Security\Accounts\Management\AccountManagerShared.cs" />
+    <Compile Include="Security\Authentication\Management\AuthenticationManager.cs" />
+    <Compile Include="Security\Authentication\Management\AuthenticationManagerAsync.cs" />
+    <Compile Include="Security\Authentication\Management\AuthenticationManagerCore.cs" />
+    <Compile Include="Security\Authentication\Management\TokenManager.cs" />
+    <Compile Include="Security\Authentication\Management\TokenManagerAsync.cs" />
+    <Compile Include="Security\Authentication\Providers\AuthenticationProvider.cs" />
+    <Compile Include="Security\Authentication\Providers\AuthenticationProviderAsync.cs" />
+    <Compile Include="Security\Authentication\Providers\AuthenticationProviderCore.cs" />
+    <Compile Include="Security\Authentication\Providers\DataInterop\UserAuthReader.cs" />
+    <Compile Include="Security\Authentication\Providers\DataInterop\UserAuthReaderAsync.cs" />
+    <Compile Include="Security\Authentication\Providers\DataInterop\UserAuthWriter.cs" />
+    <Compile Include="Security\Authentication\Providers\DataInterop\UserAuthWriterAsync.cs" />
+    <Compile Include="Security\Authentication\Providers\Forms\FormsAuthProvider.cs" />
+    <Compile Include="Security\Authentication\Providers\Forms\FormsAuthProviderAsync.cs" />
+    <Compile Include="Security\Authentication\Providers\Forms\FormsAuthProviderCore.cs" />
+    <Compile Include="Security\Authentication\Providers\Forms\FormsAuthProviderShared.cs" />
+    <Compile Include="Security\RecaptchaManager.cs" />
+    <Compile Include="Security\RecaptchaManagerAsync.cs" />
+    <Compile Include="Security\Recovery\Management\RecoveryManager.cs" />
+    <Compile Include="Security\Recovery\Management\RecoveryManagerAsync.cs" />
+    <Compile Include="Security\Recovery\Management\RecoveryManagerCore.cs" />
+    <Compile Include="Util\FileUpload\APIControllers\FileUploadController.cs" />
+    <Compile Include="Util\FileUpload\APIControllers\FileUploadHelper.cs" />
+    <Compile Include="Entities\ClubModerators\DataInterop\ClubModeratorReader.cs" />
+    <Compile Include="Entities\ClubModerators\Management\ClubModeratorManager.cs" />
+    <Compile Include="Entities\Comments\DataInterop\CommentReader.cs" />
+    <Compile Include="Entities\Comments\DataInterop\CommentWriter.cs" />
+    <Compile Include="Entities\Comments\Management\CommentManager.cs" />
+    <Compile Include="Entities\Files\DataInterop\FileReader.cs" />
+    <Compile Include="Entities\Files\DataInterop\FileWriter.cs" />
+    <Compile Include="Entities\Images\DataInterop\ImageReader.cs" />
+    <Compile Include="Entities\Images\DataInterop\ImageWriter.cs" />
+    <Compile Include="Entities\Posts\DataInterop\PostReader.cs" />
+    <Compile Include="Entities\Posts\DataInterop\PostWriter.cs" />
+    <Compile Include="Entities\Posts\Management\PostManager.cs" />
+    <Compile Include="Entities\Posts\Management\PostManagerAsync.cs" />
+    <Compile Include="Entities\Posts\Management\PostManagerShared.cs" />
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubReader.cs" />
+    <Compile Include="Entities\SchoolClubs\DataInterop\SchoolClubWriter.cs" />
+    <Compile Include="Entities\SchoolClubs\Management\SchoolClubManager.cs" />
+    <Compile Include="Entities\SchoolMajors\DataInterop\SchoolMajorReader.cs" />
+    <Compile Include="Entities\SchoolMajors\DataInterop\SchoolMajorWriter.cs" />
+    <Compile Include="Entities\SchoolMajors\Management\SchoolMajorManager.cs" />
+    <Compile Include="Entities\Schools\DataInterop\SchoolReader.cs" />
+    <Compile Include="Entities\Schools\DataInterop\SchoolWriterCore.cs" />
+    <Compile Include="Entities\Users\DataInterop\UserWriter.cs" />
+    <Compile Include="HttpModules\ResponseHeaderModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Users\DataInterop\UserReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\UHub.CoreLib.Common\UHub.CoreLib.Common.csproj">
+      <Project>{24e48abe-9b66-4d3a-bce8-2b2a635fad4e}</Project>
+      <Name>UHub.CoreLib.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.DataInterop\UHub.CoreLib.DataInterop.csproj">
+      <Project>{c87eb027-e8eb-4474-a93e-337d72d50e18}</Project>
+      <Name>UHub.CoreLib.DataInterop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.EmailInterop\UHub.CoreLib.EmailInterop.csproj">
+      <Project>{bd2e744c-a67a-4d26-aea6-df0e79531a6e}</Project>
+      <Name>UHub.CoreLib.EmailInterop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.ErrorHandling\UHub.CoreLib.ErrorHandling.csproj">
+      <Project>{01ff0731-ba07-4bd5-811b-c3af0c8d4943}</Project>
+      <Name>UHub.CoreLib.ErrorHandling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.Logging\UHub.CoreLib.Logging.csproj">
+      <Project>{5605d673-c067-4af4-b62c-e2afaa93b534}</Project>
+      <Name>UHub.CoreLib.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.RegExp\UHub.CoreLib.RegExp.csproj">
+      <Project>{747ee45f-912f-4ee6-a1e7-3ac7ad964335}</Project>
+      <Name>UHub.CoreLib.RegExp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.Tools\UHub.CoreLib.Tools.csproj">
+      <Project>{793bfdcc-6914-42fe-9b31-1976c701e36c}</Project>
+      <Name>UHub.CoreLib.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Create Club";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+    var hasRecaptcha = CoreFactory.Singleton.Properties.EnableRecaptcha;
+    var publicKey = CoreFactory.Singleton.Properties.RecaptchaPublicKey;
+
+}
+
+
+@section head
+{
+    
+}
+
+
+
+<div class="container w-70">
+    <h4>Create Club</h4>
+
+
+    <label for="txt_Name">Club Name (3-100 chars)</label> <br />
+    <input type="text" id="txt_Name" class="form-control" placeholder="Club Name:" />
+
+
+    <p></p>
+    <label for="txt_Name">Club Description (0-2000 chars)</label> <br />
+    <textarea id="txt_Description" class="form-control" rows="10" placeholder="Club Description:" ></textarea>
+
+
+    @if (hasRecaptcha)
+    {
+        <p></p>
+        <div class="g-recaptcha" data-sitekey="@publicKey"></div>
+    }
+
+    <p></p>
+    <input type="button" id="btn_CreateClub" value="Create Club" />
+
+</div>
+
+
+
+@section scripts
+{
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @Scripts.Render("~/resources/school/createClubScript")
+}

@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+
+<div id="post-container" style="display:none !important">
+
+    <div class="container bg-white w-70 mt-4 py-3">
+        <div>
+            <a v-bind:href="'/SchoolClub/' + parentID">{{commName}}</a>
+            <p></p>
+            <h3 class="px-3 pt-3" style="display:inline-block !important">{{title}}</h3>
+            <br />
+            <span>👍 ({{likeCount}}) </span>
+            <template v-if="modifiedDate != null">
+                <span>[<a :href="'/Post/History/' + postID">History</a>]</span>
+            </template>
+            <div class="p-2 pb-2 m-2" v-html="content"></div>
+            Posted By [<a v-bind:href="'/Account/find/' + createdBy">{{postCreater}}</a>]
+            <template v-if="dateCreatedFromNow != null">
+                <span>{{dateCreatedFromNow}}</span>
+            </template>
+            <span v-else>{{postTime}}</span>
+            <p></p>
+            <button id="btn_ToggleReply" type="button" class="btn-sm btn-outline-dark m-2 mb-1 d-inline" v-on:click="postReply" style="display:none !important">Reply</button>
+            <button id="btn_LikePost" type="button" class="btn-sm btn-outline-dark m-2 mb-1 d-inline" v-on:click="postLike">Like</button>
+        </div>
+        <div class="container-fluid">
+            <div id="post-reply" class="form-group" style="display: none;">
+                <textarea rows="2" class="mx-auto form-control" ref="postReplyText"></textarea>
+                <button id="post-submit-button" type="button" class="btn-sm btn-outline-primary m-2 mb-1 d-inline" v-on:click="submitCommentPost">Submit</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <comment-component v-for="comment in comments" v-on:custom-click="buttonHandler" v-bind:key="comment.id" v-bind:comment="comment"></comment-component>
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    @Scripts.Render("~/resources/post/indexScript")
+}

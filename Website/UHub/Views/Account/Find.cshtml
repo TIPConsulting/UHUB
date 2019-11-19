@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Find Account";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+<div id="body-Content" class="container w-70">
+
+    <h2>Find Account</h2>
+    <div class="container mt-4" style="background-color: white">
+
+        <div class="container section" style="padding: 15px 0px">
+            <div style="display:inline-block; vertical-align: top; padding-right: 10px">
+                <svg class="feather feather-user sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div style="display: inline-block;">
+                <div id="user-info">
+                    <ul style="width: 100%; padding: 0;">
+                        <li style="list-style: none">
+                            <h3>{{user.Username}}</h3>
+                            <h4>{{user.Major}}</h4>
+                            <h5>{{user.Year}}</h5>
+                            <h5>{{user.GradDate}}</h5>
+                            <h5 id="toggle_hide">{{user.JobTitle}} at {{user.Company}}</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+@section scripts{
+
+    <script src="~/ClientResources/Account/Scripts/AccountDetails.js"></script>
+
+}

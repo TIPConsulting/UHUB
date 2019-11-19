@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24E48ABE-9B66-4D3A-BCE8-2B2A635FAD4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UHub.CoreLib</RootNamespace>
+    <AssemblyName>UHub.CoreLib.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+    <DocumentationFile>bin\Debug\UHub.CoreLib.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+    <DocumentationFile>bin\Release\UHub.CoreLib.Common.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.10\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net-Core, Version=1.5.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Core.1.5.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalyticsTracker.Core, Version=4.6.7.0, Culture=neutral, PublicKeyToken=04ab204e84b117c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleAnalyticsTracker.Core.4.6.7\lib\portable45-net45+win8+wpa81\GoogleAnalyticsTracker.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlSanitizer.4.0.187\lib\net45\HtmlSanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Konscious.Security.Cryptography.Argon2.StrongNamed, Version=1.1.1.0, Culture=neutral, PublicKeyToken=d06af81c92c3cea1, processorArchitecture=MSIL">
+      <HintPath>..\packages\Konscious.Security.Cryptography.Argon2.StrongNamed.1.0.4\lib\net40\Konscious.Security.Cryptography.Argon2.StrongNamed.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UHub.CoreLib.RegExp.Compiler.Output">
+      <HintPath>..\_ExternalDLLs\UHub.CoreLib.RegExp.Compiler.Output.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientFriendly\ResponseStrings.cs" />
+    <Compile Include="DataConverters\DataConverterGenerator.cs">
+      <DependentUpon>DataConverterGenerator.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataConverters\DtoConverterGenerator.cs">
+      <DependentUpon>DtoConverterGenerator.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ClubModerators\ClubModerator.cs" />
+    <Compile Include="Entities\ClubModerators\DTOs\ClubModerator_C_PublicDTO.cs" />
+    <Compile Include="Entities\ClubModerators\DTOs\ClubModerator_R_PublicDTO.cs" />
+    <Compile Include="Entities\ClubModerators\Enums\ClubModeratorResultCode.cs" />
+    <Compile Include="Entities\ClubModerators\Interfaces\IClubModerator.cs" />
+    <Compile Include="Entities\ClubModerators\Interfaces\IClubModerator_C_Public.cs" />
+    <Compile Include="Entities\ClubModerators\Interfaces\IClubModerator_R_Public.cs" />
+    <Compile Include="Entities\Comments\Comment.cs" />
+    <Compile Include="Entities\Comments\DTOs\Comment_C_PublicDTO.cs" />
+    <Compile Include="Entities\Comments\DTOs\Comment_R_PublicDTO.cs" />
+    <Compile Include="Entities\Comments\Enums\CommentResultCode.cs" />
+    <Compile Include="Entities\Comments\Interfaces\IComment.cs" />
+    <Compile Include="Entities\Comments\Interfaces\IComment_C_Public.cs" />
+    <Compile Include="Entities\Comments\Interfaces\IComment_R_Public.cs" />
+    <Compile Include="Entities\Files\File.cs" />
+    <Compile Include="Entities\Images\Image.cs" />
+    <Compile Include="Entities\Posts\DTOs\Post_C_PublicDTO.cs" />
+    <Compile Include="Entities\Posts\DTOs\Post_R_PublicDTO.cs" />
+    <Compile Include="Entities\Posts\DTOs\Post_U_PublicDTO.cs" />
+    <Compile Include="Entities\Posts\Enums\PostResultCode.cs" />
+    <Compile Include="Entities\Posts\Interfaces\IPost_C_Public.cs" />
+    <Compile Include="Entities\Posts\Interfaces\IPost_R_Public.cs" />
+    <Compile Include="Entities\Posts\Interfaces\IPost_U_Public.cs" />
+    <Compile Include="Entities\Posts\Post.cs" />
+    <Compile Include="Entities\Posts\PostClusteredCount.cs" />
+    <Compile Include="Entities\SchoolClubs\DTOs\SchoolClub_C_PublicDTO.cs" />
+    <Compile Include="Entities\SchoolClubs\DTOs\SchoolClub_R_PublicDTO.cs" />
+    <Compile Include="Entities\SchoolClubs\Enums\SchoolClubResultCode.cs" />
+    <Compile Include="Entities\SchoolClubs\Interfaces\ISchoolClub_C_Public.cs" />
+    <Compile Include="Entities\SchoolClubs\Interfaces\ISchoolClub_R_Public.cs" />
+    <Compile Include="Entities\SchoolClubs\SchoolClub.cs" />
+    <Compile Include="Entities\SchoolMajors\DTOs\SchoolMajor_R_PublicDTO.cs" />
+    <Compile Include="Entities\SchoolMajors\Enums\SchoolMajorResultCode.cs" />
+    <Compile Include="Entities\SchoolMajors\Interfaces\ISchoolMajor_R_Public.cs" />
+    <Compile Include="Entities\SchoolMajors\SchoolMajor.cs" />
+    <Compile Include="Entities\Schools\DTOs\School_R_PublicDTO.cs" />
+    <Compile Include="Entities\Schools\Interfaces\ISchool_R_Public.cs" />
+    <Compile Include="Entities\Schools\School.cs" />
+    <Compile Include="Entities\Users\DTOs\User_CredentialDTO.cs" />
+    <Compile Include="Entities\Users\DTOs\User_C_PublicDTO.cs" />
+    <Compile Include="Entities\Users\DTOs\User_R_PrivateDTO.cs" />
+    <Compile Include="Entities\Users\DTOs\User_R_PublicDTO.cs" />
+    <Compile Include="Entities\Users\DTOs\User_U_PrivateDTO.cs" />
+    <Compile Include="Entities\Users\Enums\UserReferenceType.cs" />
+    <Compile Include="Entities\Users\Interfaces\IUserCredential.cs" />
+    <Compile Include="Entities\Users\Interfaces\IUser_C_Public.cs" />
+    <Compile Include="Entities\Users\Interfaces\IUser_R_Private.cs" />
+    <Compile Include="Entities\Users\Interfaces\IUser_R_Public.cs" />
+    <Compile Include="Entities\Users\Interfaces\IUser_U_Private.cs" />
+    <Compile Include="Entities\Users\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Accounts\AccountConfirmToken.cs" />
+    <Compile Include="Security\Accounts\Enums\AcctConfirmResultCode.cs" />
+    <Compile Include="Security\Accounts\Enums\AcctCreateResultCode.cs" />
+    <Compile Include="Security\Accounts\Enums\AcctPswdResultCode.cs" />
+    <Compile Include="Security\Accounts\Enums\AcctRecoveryResultCode.cs" />
+    <Compile Include="Security\Accounts\Enums\AcctResultCode.cs" />
+    <Compile Include="Security\Accounts\Enums\AcctUpdateResultCode.cs" />
+    <Compile Include="Security\Accounts\Interfaces\IAccountManager.cs" />
+    <Compile Include="Security\Accounts\Interfaces\IAccountManagerAsync.cs" />
+    <Compile Include="Security\Accounts\Interfaces\IUserConfirmToken.cs" />
+    <Compile Include="Security\Authentication\AccountAuthData.cs" />
+    <Compile Include="Security\Authentication\AuthenticationToken.cs" />
+    <Compile Include="Security\Authentication\Enums\AuthResultCode.cs" />
+    <Compile Include="Security\Authentication\Enums\PasswordValidationStatus.cs" />
+    <Compile Include="Security\Authentication\Enums\TokenValidationStatus.cs" />
+    <Compile Include="Security\Authentication\Enums\UserLoginScope.cs" />
+    <Compile Include="Security\Authentication\Interfaces\IAuthenticationManager.cs" />
+    <Compile Include="Security\Authentication\Interfaces\IAuthenticationManagerAsync.cs" />
+    <Compile Include="Security\Authentication\Interfaces\IAuthenticationManagerCore.cs" />
+    <Compile Include="Security\Authentication\TokenValidator.cs" />
+    <Compile Include="Security\Enums\CookieSameSiteMode.cs" />
+    <Compile Include="Security\Enums\HtmlSanitizerMode.cs" />
+    <Compile Include="Security\Recovery\Interfaces\IUserRecoveryContext.cs" />
+    <Compile Include="Security\Recovery\UserRecoveryContext.cs" />
+    <Compile Include="Util\Enums\FileCategory.cs" />
+    <Compile Include="Util\FileUpload\FileUploadChunkMetaData.cs" />
+    <Compile Include="Util\FileUpload\FileUploadProcessingResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\Files\DTOs\" />
+    <Folder Include="Entities\Files\Enums\" />
+    <Folder Include="Entities\Files\Interfaces\" />
+    <Folder Include="Entities\Images\DTOs\" />
+    <Folder Include="Entities\Images\Enums\" />
+    <Folder Include="Entities\Images\Interfaces\" />
+    <Folder Include="Entities\Schools\Enums\" />
+    <Folder Include="Tools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UHub.CoreLib.DataInterop\UHub.CoreLib.DataInterop.csproj">
+      <Project>{c87eb027-e8eb-4474-a93e-337d72d50e18}</Project>
+      <Name>UHub.CoreLib.DataInterop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.ErrorHandling\UHub.CoreLib.ErrorHandling.csproj">
+      <Project>{01ff0731-ba07-4bd5-811b-c3af0c8d4943}</Project>
+      <Name>UHub.CoreLib.ErrorHandling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.RegExp.Compiled\UHub.CoreLib.RegExp.Compiled.csproj">
+      <Project>{4a0d3083-46d5-45c9-b882-4b04090ba5ea}</Project>
+      <Name>UHub.CoreLib.RegExp.Compiled</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.RegExp\UHub.CoreLib.RegExp.csproj">
+      <Project>{747ee45f-912f-4ee6-a1e7-3ac7ad964335}</Project>
+      <Name>UHub.CoreLib.RegExp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UHub.CoreLib.Tools\UHub.CoreLib.Tools.csproj">
+      <Project>{793bfdcc-6914-42fe-9b31-1976c701e36c}</Project>
+      <Name>UHub.CoreLib.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataConverters\DataConverterGenerator.tt">
+      <LastGenOutput>DataConverterGenerator.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataConverters\DtoConverterGenerator.tt">
+      <LastGenOutput>DtoConverterGenerator.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

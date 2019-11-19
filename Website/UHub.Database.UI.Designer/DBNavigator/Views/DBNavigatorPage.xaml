@@ -1,0 +1,26 @@
+﻿<Page x:Class="UHub.Database.UI.Designer.DBNavigator.Views.DBNavigatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UHub.Database.UI.Designer.DBNavigator.Views"
+      xmlns:sysState="clr-namespace:UHub.Database.UI.Designer.Main.Models"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DBNavigatorPage">
+
+    <Grid>
+        <Label 
+            HorizontalAlignment="Left" Margin="19,19,0,0" VerticalAlignment="Top"
+            Content="{Binding Path=(sysState:SystemStateTracker.SqlConn)}" />
+        <Button
+            x:Name="btn_GenViews"
+            Content="Generate Views" HorizontalAlignment="Left" Margin="19,72,0,0" VerticalAlignment="Top" Width="171"
+            Click="btn_GenViews_Click"/>
+        <Button
+            x:Name="btn_GenRevisionViews"
+            Content="Generate Revision Views" HorizontalAlignment="Left" Margin="19,122,0,0" VerticalAlignment="Top" Width="171"
+            Click="btn_GenRevisionViews_Click"/>
+
+    </Grid>
+</Page>

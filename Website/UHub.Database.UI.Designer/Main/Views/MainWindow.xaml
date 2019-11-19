@@ -1,0 +1,20 @@
+﻿<Window x:Class="UHub.Database.UI.Designer.Main.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UHub.Database.UI.Designer.Main.Views"
+        xmlns:sysState="clr-namespace:UHub.Database.UI.Designer.Main.Models"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="538.387" Width="915.815"
+        Initialized="Window_Initialized" Closing="Window_Closing">
+
+
+    <DockPanel LastChildFill="True">
+        <Frame
+            x:Name="frm_ContentFrame"
+            VerticalAlignment="Top" NavigationUIVisibility="Hidden"
+            Content="{Binding Path=(sysState:SystemStateTracker.FrameSource)}"/>
+
+    </DockPanel>
+</Window>

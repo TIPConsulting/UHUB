@@ -1,0 +1,48 @@
+﻿@using UHub.CoreLib.Management;
+
+@model UHub.Models.Security.RecaptchaLoginViewModel
+
+
+
+@{
+
+    var hasRecaptcha = CoreFactory.Singleton.Properties.EnableRecaptcha;
+    var publicKey = CoreFactory.Singleton.Properties.RecaptchaPublicKey;
+
+    if (Model.RenderScripts)
+    {
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    }
+
+
+    if (hasRecaptcha)
+    {
+        <div class="g-recaptcha" data-sitekey="@publicKey"></div>
+        <p></p>
+    }
+
+
+    if (string.IsNullOrWhiteSpace(Model.SubmitPath))
+    {
+        <input type="submit" name="btn_Submit" id="btn_Submit" value="@Model.SubmitText" class="@Model.SubmitClass" />
+    }
+    else
+    {
+        <input type="submit" name="btn_Submit" id="btn_Submit" value="@Model.SubmitText" class="@Model.SubmitClass" formaction="@Model.SubmitPath" />
+    }
+
+
+    if (Model.RenderScripts)
+    {
+        //block enter key except for textareas
+        if (Model.UseSubmitBehavior)
+        {
+            <script src="~/ClientResources/Security/Scripts/RecaptchaPartial.js"></script>
+        }
+        else
+        {
+            <script src="~/ClientResources/Security/Scripts/RecaptchaPartialNoSubmit.js"></script>
+        }
+    }
+
+}
